@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Libre+Franklin:wght@100;400&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --valid-color: hsl(165, 60%, 42%);
+  --invalid-color: hsl(51, 100%, 50%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(hsl(353, 100%, 35%), hsl(353, 100%, 13%));
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+body,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  all: unset;
+  width: 100%;
+  font-weight: 400;
+}
+
+form {
+  background-color: hsla(0, 0%, 100%, 50%);
+  border: 2px solid hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  width: 85vw;
+  padding: calc(.4rem + .5vw) calc(.5rem + 1vw);
+  font-size: calc(1rem + 1vw);
+  font-weight: 100;
+}
+
+form:focus-within:valid {
+  border: 4px solid var(--valid-color);
+}
+
+form:focus-within:invalid {
+  border: 4px solid var(--invalid-color);
+}
+
+#resource {
+  font-family: 'Cutive Mono', monospace;
+  font-size: calc(1rem + 2vw);
+  color: hsl(0, 0%, 100%);
+  position: fixed;
+  top: 2rem;
+  opacity: 100%;
+  transition: opacity .2s ease-in;
+}
+
+#resource[hidden] {
+  opacity: 0%;
+}
+
+#resource.not-found {
+  color: var(--invalid-color);
+}
