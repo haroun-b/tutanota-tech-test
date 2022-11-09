@@ -33,6 +33,10 @@ input {
   font-weight: 400;
 }
 
+input::placeholder {
+  font-weight: 100;
+}
+
 form {
   background-color: hsla(0, 0%, 100%, 50%);
   border: 2px solid hsl(0, 0%, 100%);
@@ -40,7 +44,6 @@ form {
   width: 85vw;
   padding: calc(.4rem + .5vw) calc(.5rem + 1vw);
   font-size: calc(1rem + 1vw);
-  font-weight: 100;
 }
 
 form:focus-within:valid {

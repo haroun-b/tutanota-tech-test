@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="./style.css" />
-  <script src="./scripts/fake-fetch.js"></script>
   <script type="module" src="./scripts/script.js"></script>
 
   <link type="image/x-icon" rel="icon" href="./tutanota-logo.svg" />
@@ -18,9 +17,9 @@
   <p id="resource" hidden></p>
 
   <form>
-    <p>https://drive.tutanota.com/</p>
-    <input type="search" name="url" id="url" pattern="(([\w\d.\-~]+\/?)+)"
-      required />
+    <input type="search" name="url" id="url"
+      pattern="(((https?|ftp):\/\/)?([\w.\-~]+\/?)+)" required
+      placeholder="https://example.com/resources/images/disappointed-frog" />
   </form>
 </body>
 
