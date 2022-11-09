@@ -41,7 +41,7 @@ const fakeFetch = (() => {
     });
 
     // returns an array. with response as a promise that resolves or reject after a random delay (700-800)ms, it resolves if the url exists, otherwise it rejects with a 404. the second element is a function to abort the fake server call.
-    return [response, () => { clearTimeout(timeoutId); }];
+    return [response, () => { clearTimeout(timeoutId) }];
   };
 })();
 
