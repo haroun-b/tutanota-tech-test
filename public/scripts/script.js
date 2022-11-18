@@ -1,4 +1,5 @@
 import { fakeFetch } from "./fake-fetch.js";
+import { doWithDebounce } from "./do-with-debounce.js";
 
 const form = document.querySelector("form");
 const urlInput = document.querySelector("#url");
@@ -7,18 +8,21 @@ const responseMsg = document.querySelector("#resource");
 const regex = new RegExp(urlInput.pattern, "g");
 let abort;
 
-
 // prevents form submission
 form.addEventListener("submit", (e) => { e.preventDefault() });
 
 urlInput.addEventListener("input", handleInput);
 
 
-async function handleInput() {
-  try {
-    if (abort) abort(); // aborts the previous fakeFetch
-    responseMsg.hidden = true;
+function handleInput() {
+  if (abort) abort(); // aborts the previous fakeFetch
+  responseMsg.hidden = true;
 
+  doWithDebounce(lookupURL);
+}
+
+async function lookupURL() {
+  try {
     const url = urlInput.value;
 
     const urlMatch = url.match(regex);
