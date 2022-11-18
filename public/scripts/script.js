@@ -21,9 +21,8 @@ async function handleInput() {
 
     const url = urlInput.value;
 
-    const urlMatchesRegex = url.match(regex) ?
-      url.match(regex)[0].length === url.length :
-      false;
+    const urlMatch = url.match(regex);
+    const urlMatchesRegex = urlMatch ? urlMatch[0].length === url.length : false;
 
     if (!urlMatchesRegex) return;
 
@@ -32,11 +31,15 @@ async function handleInput() {
     const path = pathname.split("/").filter(bit => bit.length);
     if (!path.length) return;
 
+    const [endOfPath, ext] = path.at(-1).split(".");
+    path[path.length - 1] = endOfPath;
+
     const origin = [...host.split(".").reverse(), protocol.match(/\w+/g)[0].slice(0, 4)];  // ["com", "example", "http"]
 
+    const urlFormated = origin.concat(path);
 
     let response;
-    [response, abort] = fakeFetch({ origin, path });
+    [response, abort] = fakeFetch({ urlFormated, ext });
 
     const resourceType = await response;
 

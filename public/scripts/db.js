@@ -4,7 +4,7 @@ export default {
       "http": {
         "resources": {
           "images": {
-            "disappointed-frog": "jpeg"
+            "disappointed-frog": ["jpeg", "gif"]
           }
         }
       }
@@ -13,18 +13,18 @@ export default {
       "drive": {
         "http": {
           "books": {
-            "flowers-for-algernon": "epub",
-            "the-power-of-habits": "pdf",
-            "when-all-is-said": "epub",
-            "the-brain": "pdf"
+            "flowers-for-algernon": ["epub"],
+            "the-power-of-habits": ["pdf"],
+            "when-all-is-said": ["epub"],
+            "the-brain": ["pdf"]
           },
           "videos": {
             "films": {
-              "eternal-sunshine-of-the-spotless-mind": "mov",
-              "everything-everywhere-all-at-once": "mkv",
-              "spirited-away": "avi",
-              "pulp-fiction": "mkv",
-              "in-bruges": "mp4"
+              "eternal-sunshine-of-the-spotless-mind": ["mov"],
+              "everything-everywhere-all-at-once": ["mkv"],
+              "spirited-away": ["avi"],
+              "pulp-fiction": ["mkv"],
+              "in-bruges": ["mp4"]
             },
             "series": {
               "its-always-sunny-in-philadelphia": {},
