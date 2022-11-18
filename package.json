@@ -1,6 +1,6 @@
 {
   "name": "to-file-or-to-folder",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A Tutanota technical assignment",
   "main": "index.js",
   "scripts": {
