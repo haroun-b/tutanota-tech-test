@@ -12,7 +12,10 @@ const doWithThrottle = (() => {
     throttled = true;
 
     setTimeout(() => {
-      if (pendingRequest) pendingRequest();
+      if (pendingRequest) {
+        pendingRequest();
+        pendingRequest = null;
+      }
 
       pendingRequest = null;
       throttled = false;
