@@ -18,4 +18,4 @@ npm start
 ```
 
 ## Live version
-Alternatively you can check out the [live version](https://harryb.dev/tutanota-tech-test/)
+Alternatively you can check out the [live version](https://haroun-b.github.io/tutanota-tech-test)
